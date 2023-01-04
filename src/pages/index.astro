@@ -1,4 +1,14 @@
 ---
+const person = {
+	name: 'Kiki',
+	age: 30,
+	location: 'Berlin',
+	hobbies: ['music', 'coding', 'traveling']
+}
+
+const blogPosts = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5').then(res => res.json());
+
+const isVisiting = false;
 ---
 
 <html lang="en">
@@ -7,9 +17,26 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Kikis Blog</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>{person.name}'s' Blog</h1>
+		<h3>Age: {person.age}</h3>
+		<h3>Hobbies:</h3>
+		<ul>
+			{person.hobbies.map(hobby => (
+				<li>{hobby}</li>
+			))}
+		</ul>
+		<h3>Blog Posts:</h3>
+		<ul>
+			{blogPosts.map(post => (
+				<li>{post.title}</li>
+			))}
+		</ul>
+		{isVisiting 
+	    ? <h3>Location: {person.location}</h3>
+		  : <h3>Location: Unknown</h3>
+		}
 	</body>
 </html>
