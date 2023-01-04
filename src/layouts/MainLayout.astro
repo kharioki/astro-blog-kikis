@@ -1,14 +1,17 @@
 ---
+// layout component import
+import MainHead from './MainHead.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Kiki's Blog", description = "My blog" } = Astro.props as Props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Kikis Blog</title>
-	</head>
+	<MainHead {title} {description} />
 	<body>
 		<slot>
       Default Text
