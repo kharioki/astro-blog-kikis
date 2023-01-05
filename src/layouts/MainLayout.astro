@@ -4,6 +4,8 @@ import MainHead from './MainHead.astro';
 
 // style import
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
 
 interface Props {
   title?: string;
@@ -16,8 +18,10 @@ const { title = "Kiki's Blog", description = "My blog" } = Astro.props as Props;
 <html lang="en">
 	<MainHead {title} {description} />
 	<body>
+    <Nav />
 		<slot>
       Default Text
     </slot>
+    <Footer />
 	</body>
 </html>
