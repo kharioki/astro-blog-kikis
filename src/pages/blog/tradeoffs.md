@@ -1,5 +1,5 @@
 ---
-
+layout: "../../layouts/BlogPostLayout.astro"
 title : Site tradeoffs - SEO vs Speed vs Ease of update
 date : 2021-04-23
 author : kharioki

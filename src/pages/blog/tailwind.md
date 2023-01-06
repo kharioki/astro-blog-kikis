@@ -1,5 +1,5 @@
 ---
-
+layout: "../../layouts/BlogPostLayout.astro"
 title : Tailwind CSS - core concepts and JIT mode
 date : 2021-09-05
 author : kharioki

@@ -8,3 +8,10 @@ export function slugify(text) {
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
 }
+
+
+export function formatDate(date) {
+  return new Date(date).toLocaleDateString('en-US', {
+    timeZone: 'UTC',
+  });
+}

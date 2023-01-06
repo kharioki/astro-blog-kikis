@@ -1,5 +1,5 @@
 ---
-
+layout: "../../layouts/BlogPostLayout.astro"
 title : Configuring my VS Code Editor
 date : 2021-06-19
 author : kharioki

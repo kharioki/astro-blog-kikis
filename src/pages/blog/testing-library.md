@@ -1,5 +1,5 @@
 ---
-
+layout: "../../layouts/BlogPostLayout.astro"
 title : Testing Library and why I use it
 date : 2021-09-14
 author : kharioki
