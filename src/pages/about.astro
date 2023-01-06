@@ -1,8 +1,22 @@
 ---
 // import the layout component
+import Link from "../components/Link.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Kiki's Blog | About" description="About page">
-	<h1>About page</h1>
+	<section class="container about" aria-label="About Me">
+    <img src="/images/headshot.png" alt="My headshot" width="250" height="330" />
+    <div class="content">
+      <h1 class="h1">Hi, I'm Tony...</h1>
+      <p>
+        I'm a web and mobile application developer with a focus on UI engineering, full-stack development, UX design and design systems. I have over five(5) years experience in professional work environment working onsite and fully remote.
+      </p>
+			<Link
+			  href="mailto:tony.kharioki@gmail.com"
+				style="primary"
+				text="Contact Me"
+			/>
+    </div>
+  </section>
 </MainLayout>
