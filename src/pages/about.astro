@@ -1,4 +1,7 @@
 ---
+// library imports
+import { Image } from "@astrojs/image/components";
+
 // import the layout component
 import Link from "../components/Link.astro";
 import MainLayout from "../layouts/MainLayout.astro";
@@ -6,7 +9,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Kiki's Blog | About" description="About page">
 	<section class="container about" aria-label="About Me">
-    <img src="/images/headshot.png" alt="My headshot" width="250" height="330" />
+    <Image
+      src="/images/headshot.png"
+      alt="My headshot"
+      width="300"
+      height="300"
+      format="avif"
+      fit="cover"
+    />
     <div class="content">
       <h1 class="h1">Hi, I'm Tony...</h1>
       <p>
