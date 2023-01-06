@@ -1,5 +1,5 @@
 ---
-
+layout: "../../layouts/BlogPostLayout.astro"
 title : NextJS - Getting Started
 date : 2021-04-16
 author : kharioki
