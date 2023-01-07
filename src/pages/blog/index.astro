@@ -1,23 +1,18 @@
 ---
+// layout import
+import PostCard from "../../components/PostCard.astro";
+
+// components import
 import MainLayout from "../../layouts/MainLayout.astro";
+
+const allPosts = await Astro.glob("./*.md");
 ---
 
 <MainLayout title="Kiki's Blog">
-  <ul>
-    <li>
-      <a href="./blog/next/">Next</a>
-    </li>
-    <li>
-      <a href="./blog/tailwind/">Tailwind</a>
-    </li>
-    <li>
-      <a href="./blog/testing-library/">Testing Library</a>
-    </li>
-    <li>
-      <a href="./blog/tradeoffs/">Site Tradeoffs</a>
-    </li>
-    <li>
-      <a href="./blog/vscode/">Configuring VSCode</a>
-    </li>
-  </ul>
+  <section class="container" aria-label="New Blog Posts">
+    <h1 class="h1">New Blog Posts</h1>
+    <div class="post-container">
+      {allPosts.map(({ frontmatter, url }) => <PostCard {frontmatter} {url} tagType="h2" />)}
+    </div>
+  </section>
 </MainLayout>
