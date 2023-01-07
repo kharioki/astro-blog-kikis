@@ -1,7 +1,49 @@
 ---
+// library imports
+import { Image } from "@astrojs/image/components";
+
+// layout import
 import MainLayout from "../layouts/MainLayout.astro";
+
+// component imports
+import PostCard from "../components/PostCard.astro";
+import Link from "../components/Link.astro";
+
+import { formatBlogPosts } from "../js/utils";
+
+const allPosts = await Astro.glob("./blog/*.md");
+
+const formattedPosts = formatBlogPosts(allPosts, {
+  limit: 3,
+});
 ---
 
 <MainLayout title="Kiki's Blog" description="Kiki's Blog">
-	<h1>My Blog</h1>
+  <section class="container about" aria-label="About Me">
+    <Image
+      src="/images/headshot.png"
+      alt="My headshot"
+      width="300"
+      height="300"
+      format="avif"
+      fit="cover"
+    />
+    <div class="content">
+      <h1 class="h1">Hi, I'm Tony 'Stark' Kharioki...</h1>
+      <p>
+        I'm a web and mobile application developer with a focus on UI engineering, full-stack development, UX design and design systems. I have over five(5) years experience in professional work environment working onsite and fully remote.
+      </p>
+			<Link
+			  href="/about/"
+				style="primary"
+				text="About Me"
+			/>
+    </div>
+  </section>
+	<section class="container" aria-label="New Blog Posts">
+    <h2 class="h1">New Blog Posts</h2>
+    <div class="post-container">
+      {formattedPosts.map(({ frontmatter, url }) => <PostCard {frontmatter} {url} tagType="h3" />)}
+    </div>
+  </section>
 </MainLayout>
