@@ -14,7 +14,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kikis-blog-astro.netlify.app',
+  site: 'https://astro-blog-kikis.vercel.app',
   integrations: [image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), sitemap(), react(), partytown()]
