@@ -1,0 +1,8 @@
+{
+  "title": "Kiki's Blog",
+  "description": "My musings about tech",
+  "image": {
+    "src": "/images/image-default.png",
+    "alt": "Kiki's Blog"
+  }
+}
